@@ -1,4 +1,4 @@
-// Authors: Seb Favela, Matthe Maillet, Bryce Molner, Emily Weinstein
+// Authors: Seb Favela, Matthew Maillet, Bryce Molner, Emily Weinstein
 // File: group.scala (tentative)
 
 import scala.io.StdIn.readLine
