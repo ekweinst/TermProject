@@ -4,8 +4,8 @@
 import scala.io.StdIn.readLine
 
 object main extends App {
-	println("This is the beginning of our group project. \n")
-	Thread.sleep(500)
+	println("\u001bThis is the beginning of our group project.\u001b \n")
+	Thread.sleep(1000)
 	println("Hello there, young traveller. What might your name be?")
 	var name = readLine()
 	println(s"Hello there, $name")
@@ -29,8 +29,14 @@ class Player(name: String, var charClass: String, var health: Int, var armor: In
 	def getName: String = name
 	def getClass: String = charClass
 	def getHealth: Int = health
+	def setHealth(_health: Int): Unit = 
+		health = _health
 	def getArmor: Int = armor
+	def setArmor(_armor: Int): Unit = 
+		armor = _armor
 	def getDamage: Int = damage
+	def setDamage(_damage: Int): Unit = 
+		damage = _damage
 	def attack: Unit = println("Default attack")
 end Player
 
