@@ -3,26 +3,46 @@
 
 import scala.io.StdIn.readLine
 
+/**
+ * The main function facillitates the operation of the program
+ * 
+ * */
 object main extends App {
-	println("\u001bThis is the beginning of our group project.\u001b \n")
+	println("This is the beginning of our group project.")
 	Thread.sleep(1000)
-	println("Hello there, young traveller. What might your name be?")
-	var name = readLine()
-	println(s"Hello there, $name")
-	println("You have stumbled into the beginning of quite the adventure. First, you must choose your class. Would you like to be a rogue, wizard, or warrior?")
-	println("~~ for now, this is (1) for rogue, (2) for wizard, (3) for warrior\n")
-	var charClass = readLine().toInt
-	var character = createChar(charClass, name)
+	var character = createChar
 	println(s"Okay young ${character.getClass}.")
 	// test attack function 
 	character.attack
 }
 
-def createChar(charClass: Int, name: String): Player = {
-	if (charClass == 1) { Rogue(name) }
-	else if (charClass == 2) { Wizard(name) }
-	else if (charClass == 3) { Warrior(name) }
-	else { null }
+def createChar: Player = {
+	println("Hello there, young traveller. What might your name be?")
+	var name = readLine()
+	println(s"Hello there, $name")
+	println("You have stumbled into the beginning of quite the adventure. First, you must choose your class. Would you like to be a rogue, wizard, or warrior?")
+	println("(1) for rogue, (2) for wizard, (3) for warrior\n")
+
+	var character = Player(name, null, 0, 0, 0)
+
+	var selectClass = true
+	while (selectClass) {
+		var charClass = readLine()
+		if (charClass.equals("1")) { 
+			character = Rogue(name)
+			selectClass = false
+		}
+		else if (charClass.equals("2")) { 
+			character = Wizard(name) 
+			selectClass = false
+		}
+		else if (charClass.equals("3")) { 
+			character = Warrior(name) 
+			selectClass = false
+		}
+		else { println("That's not an option, kid. Try again.") }
+	}
+	character
 }
 
 class Player(name: String, var charClass: String, var health: Int, var armor: Int, var damage: Int):
@@ -35,6 +55,9 @@ class Player(name: String, var charClass: String, var health: Int, var armor: In
 	def setArmor(_armor: Int): Unit = 
 		armor = _armor
 	def getDamage: Int = damage
+	def takeDamage(lostHealth: Int): Unit = 
+		// Matt how do you want armor to factor into this?
+		damage = damage - lostHealth
 	def setDamage(_damage: Int): Unit = 
 		damage = _damage
 	def attack: Unit = println("Default attack")
