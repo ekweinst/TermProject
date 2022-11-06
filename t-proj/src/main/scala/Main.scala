@@ -73,7 +73,7 @@ def menuStart(mType: Int) : Int = {
 
 // This is the class selection function, runs classArrowMatch to change where the arrow points
 def classSelect(name: String) : Player = {
-	var character = Player(name, null, 0, 0, 0)
+	var character = Player(name, 0, 0, 0, 0, 0, 0)
 
 	clearscr() 
 	println("Choose your class: (Use 'W' and 'S' to move, 'Enter' to select) \n> Rogue \n  Warrior \n  Wizard")
@@ -86,7 +86,6 @@ def classSelect(name: String) : Player = {
 	} else if (select == 2) {
 		character = Wizard(name)
 	}
-
 	character
 }
 
@@ -99,9 +98,23 @@ def clearscr() = {
 		
 
 def createChar: Player = {
-	println("Hello there, young traveller. What might your name be?")
-	var name = readLine()
-	println(s"Hello there, $name.")
+	var validName = false
+	var name = ""
+	while (!validName) {
+		clearscr() 
+		println("Hello there, young traveler. What might your name be?")
+		name = readLine()
+		validName = true
+		for (elem <- name) {
+			val asciiVal = elem.toInt
+			if (asciiVal < 32 || (asciiVal > 32 && asciiVal < 65) || asciiVal > 122 || (asciiVal > 91 && asciiVal < 97)) { validName = false }
+		}
+		if (!validName) {
+			println("I highly doubt that's your name. Let's try that again.")
+			Thread.sleep(1500)
+		}
+	}
+	println(s"Hello, $name.")
 	println("You have stumbled into the beginning of quite the adventure.")
 	Thread.sleep(1500)
 	println("First, you must choose your class.")
