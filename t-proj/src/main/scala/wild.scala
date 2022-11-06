@@ -14,10 +14,10 @@ import scala.util.Random
  * 2a. If explore, then follow from 3
  * 2b. If go back to town, then send the player back to the town.
  * 3. Have them generate:
- * 4a. If gold, give random gold (1-100)
- * 4b. If trip, deal random damage (1-17)
- * 4c. If rest, heal random health (5-20)
- * 4d. If monster, follow from 5
+ * 4a. If gold, give random gold (1-100)  [5%]
+ * 4b. If trip, deal random damage (1-34) [15%]
+ * 4c. If rest, heal random health (5-20) [30%]
+ * 4d. If monster, follow from 5          [50%]
  * 5. Generate either Goblin (60%) or Skeleton (40%)
  * 6. Battle the monster
  * 7. Player selects either attack or potion (20-30% health recovered)
@@ -28,13 +28,57 @@ import scala.util.Random
  * 10. Go back to 1
  **/
 
-// def explore() =
+// mType = 2
+// def battleArrowMatch(arrow: Int) : Int = {
+//     var nextArrow = arrow
+//     arrow match {
+        
+//     }
+// }
 
+def battle(character: Player, monster: Monster) : Boolean = {
+    var dead = false
 
+    dead
+}
+
+def explore(character: Player) : Boolean = {
+    var dead = false
+    var walkChance = Random.nextInt(100)
+    var randMonster = Random.nextInt(100)
+    if (walkChance <= 5) {
+        clearscr()
+        println("You found gold!")
+        Thread.sleep(2000)
+    } else if (walkChance <= 20) {
+        clearscr()
+        println("You tripped over a rock!")
+        character.takeDamage(Random.nextInt(34))
+        Thread.sleep(2000)
+    } else if (walkChance <= 50) {
+        clearscr()
+        println("You took a rest and got healed!")
+        Thread.sleep(2000)
+    } else if (walkChance <= 100) {
+        clearscr()
+        if (randMonster <= 40) {
+            println("You encountered a skeleton!")
+            Thread.sleep(2000)
+            var skeleton = Skeleton()
+            dead = battle(character, skeleton)
+        } else {
+            println("You encountered a goblin!")
+            Thread.sleep(2000)
+            var goblin = Goblin()
+            dead = battle(character, goblin)
+        }
+    }
+    dead
+}
 // def backToTown() =
 
 // mType = 1
-def wildArrowMatch(arrow: Int) : Int =
+def wildArrowMatch(arrow: Int) : Int = {
     var nextArrow = arrow
     arrow match {
         case -1 => 
@@ -55,15 +99,24 @@ def wildArrowMatch(arrow: Int) : Int =
             println("Would you like to explore or go back to town?\n> Explore\n  Go back")
     }
     nextArrow
+}
 
-
-def wild() =
-    clearscr()
-    println("Would you like to explore or go back to town?\n> Explore\n  Go back")
-    var choice = menuStart(1)
-    // if (choice == 0) {
-    //     explore()
-    // } else {
-    //     backToTown()
-    // }
+def wild(character: Player) =
+    var choice = 0
+    var wildCheck = true
+    var dead = false
+    while (wildCheck) {
+        clearscr()
+        println("Would you like to explore or go back to town?\n> Explore\n  Go back")
+        choice = menuStart(1)
+        if (choice == 0) {
+            dead = explore(character)
+        } else if (!dead) {
+            // backToTown()
+            wildCheck = false
+        } else if (dead) {
+            println("You died. Better luck next time!")
+            wildCheck = false
+        }
+    }
 

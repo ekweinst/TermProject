@@ -7,47 +7,47 @@
 
 /**	README - IMPORTANT!!!! <-- <-- <-- <-- <-- <-- <-- <-- <--
  * 
- * 
- * 
- * 
- * 
  * How to call functions from other files:
  * compile: scalac group.scala monsters.scala
  * run: scala main
  * end: kaboom
+ * 
+ * Alternatively:
+ * Use 'sbt' to compile and run the code
+ * sbt will automatically compile everything in the main file
  */
 
 import scala.io.StdIn.readLine
 import jline.console.ConsoleReader
-import scala.util.Random
-
 
 // mType = 0
-def classArrowMatch(arrow: Int) : Int =
+def classArrowMatch(arrow: Int) : Int = {
 	var nextArrow = arrow
 	
 	nextArrow match {
 		case -1 =>
 			nextArrow = 2
 			clearscr()
-			println("Choose your class: \n  Rogue \n  Warrior \n> Wizard")
+			println("Choose your class: (Use 'W' and 'S' to move, 'Enter' to select) \n  Rogue \n  Warrior \n> Wizard")
 		case 0 =>
 			clearscr()
-			println("Choose your class: \n> Rogue \n  Warrior \n  Wizard")
+			println("Choose your class: (Use 'W' and 'S' to move, 'Enter' to select) \n> Rogue \n  Warrior \n  Wizard")
 		case 1 =>
 			clearscr()
-			println("Choose your class: \n  Rogue \n> Warrior \n  Wizard")
+			println("Choose your class: (Use 'W' and 'S' to move, 'Enter' to select) \n  Rogue \n> Warrior \n  Wizard")
 		case 2 =>
 			clearscr()	
-			println("Choose your class: \n  Rogue \n  Warrior \n> Wizard")
+			println("Choose your class: (Use 'W' and 'S' to move, 'Enter' to select) \n  Rogue \n  Warrior \n> Wizard")
 		case 3 =>
 			nextArrow = 0
 			clearscr()
-			println("Choose your class: \n> Rogue \n  Warrior \n  Wizard")
+			println("Choose your class: (Use 'W' and 'S' to move, 'Enter' to select) \n> Rogue \n  Warrior \n  Wizard")
 	}
 	nextArrow
 
-def menuStart(mType: Int) : Int = 
+}
+ 
+def menuStart(mType: Int) : Int = {
 	var reader = 0
 	var arrow = 0
 	var enter = false
@@ -69,9 +69,10 @@ def menuStart(mType: Int) : Int =
 		}
 	}
 	arrow	
+}
 
-// This si the class selection function, runs classArrowMatch to change where the arrow points
-def classSelect(name: String) : Player =
+// This is the class selection function, runs classArrowMatch to change where the arrow points
+def classSelect(name: String) : Player = {
 	var character = Player(name, null, 0, 0, 0)
 
 	clearscr() 
@@ -87,12 +88,14 @@ def classSelect(name: String) : Player =
 	}
 
 	character
+}
 
 
-// Clears the screen if your terminal is 24x80 dimensions or less
-def clearscr() =
+//Clears the screen if your terminal is 24x80 dimensions or less
+def clearscr() = {
 	for (index <- 0 to 100)
 		println()
+}
 		
 
 def createChar: Player = {
@@ -110,20 +113,23 @@ def createChar: Player = {
 	character
 }
 
-def playGame(character: Player) =
+def playGame(character: Player) = {
 	println(s"Okay young ${character.getClass}. This will be an adventure of a lifetime.")
-	Thread.sleep(2000)
-	wild()
+	Thread.sleep(3000)
+	wild(character)
+
+}
 
 /**
  * The main function facillitates the operation of the program
  * 
  * */
 
-@main def main =
-
+@main def main = {
 	clearscr()
 	Thread.sleep(1000)
 	var character = createChar
 	playGame(character)
+}
+
 
