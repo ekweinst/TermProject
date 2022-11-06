@@ -124,43 +124,64 @@ class Player(name: String, var health: Int, var armor: Int, var damage: Int, var
   def takeDamage(lostHealth: Int): Unit =
     // Matt how do you want armor to factor into this?
     damage = damage - lostHealth
+  // A setter method for the player's damage
   def setDamage(_damage: Int): Unit =
     damage = _damage
+  // A getter method for the player's level
   def getLevel: Int = level
+  // A getter method for the player's XP
   def getExperiance: Int = experiance
+  // A setter method for the player's XP
   def setExperiance(_experiance: Int): Unit =
     experiance = _experiance
+  // A getter method for the player's money
   def getCoins: Int = coins
+  // A setter method for the player's money
   def setCoins(_coins: Int): Unit =
     coins = _coins
+  // Check to see if the player has leveled up
   def willItLevelUp: Unit = {
     if(getExperiance >= ((4 * getLevel)/5)) {
       setExperiance(getExperiance - ((4 * getLevel) / 5))
       levelUp
     }
   }
-
+  // Level up the player and update states
   def levelUp: Unit =
     damage += 2
     health += 5
     armor += 1
     level += 1
     println("You leveled up! You now have: " + getDamage + " damage " + getHealth + " health and " +getArmor+" armor!")
+  // A default attack method for the character
   def attack: Unit = println("Default attack")
 end Player
 
 // CITE: https://www.geeksforgeeks.org/method-overriding-in-scala/
 // DESC: How to override a method in a subclass
+
+/**
+ * Rogue is a subclass of Player with specific functionality to warrior types
+ * @param name, the player's name
+ * */ 
 class Rogue(var name: String) extends Player(name, 100, 5, 25, 1, 0, 0):
   override def attack: Unit = println("Rogue attacks!")
   override def getClass: String = "Rogue"
 end Rogue
 
+/**
+ * Wizard is a subclass of Player with specific functionality to warrior types
+ * @param name, the player's name
+ * */ 
 class Wizard(var name: String) extends Player(name, 100, 10, 50, 1, 0, 0):
   override def attack: Unit = println("Wizard attacks!")
   override def getClass: String = "Wizard"
 end Wizard
 
+/**
+ * Warrior is a subclass of Player with specific functionality to warrior types
+ * @param name, the player's name
+ * */ 
 class Warrior(var name: String) extends Player(name, 150, 15, 100, 1, 0, 0):
   override def attack: Unit = println("Warrior attacks!")
   override def getClass: String = "Warrior"
