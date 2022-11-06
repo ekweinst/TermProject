@@ -5,7 +5,6 @@ import scala.io.StdIn.readLine
 
 /**
  * The main function facillitates the operation of the program
- * 
  * */
 object main extends App {
   clearscr()
@@ -15,16 +14,10 @@ object main extends App {
   clearscr()
   print(s"Okay young ${character.getClass}. Let's go into the town")
   Thread.sleep(650)
-  print(".")
-  Thread.sleep(650)
-  print(".")
-  Thread.sleep(650)
-  print(".")
-  Thread.sleep(650)
-  print(".")
-  Thread.sleep(650)
-  print(".")
-  Thread.sleep(650)
+  for (rep <- 1 to 5) {
+    print(".")
+    Thread.sleep(650)
+  }
 
   character.setCoins(10000)
 
@@ -41,57 +34,92 @@ object main extends App {
   clearscr()
 }
 
+/**
+ * This function intakes a name and class choice from the player,
+ * checking for appropriate inputs from the user
+ * @param N/A
+ * @return a player object of type Warrior, Wizard, or Rogue
+ * */
 def createChar: Player = {
   println("Hello there, young traveler. What might your name be?")
-  var name = readLine()
-  println(s"Hello there, $name")
+  var name = ""
+  var validName = false
+  while (!validName) {
+    name = readLine()
+    validName = true
+    for (elem <- name) {
+      val asciiVal = elem.toInt
+      if (asciiVal < 65 || asciiVal > 122 || (asciiVal > 91 && asciiVal < 97)) {
+        println("I highly doubt that's your name. Try again.")
+        validName = false
+      }
+    }
+  }
+  clearscr()
+  println(s"Hello $name!\n")
+  Thread.sleep(650)
   println("You have stumbled into the beginning of quite the adventure. First, you must choose your class. Would you like to be a rogue, wizard, or warrior?")
-  println("(1) for rogue, (2) for wizard, (3) for warrior\n")
-
-  var character = Player(name, null, 0, 0, 0, 0, 0, 0)
-
+  println("1) Rogue\n2) Wizard\n3) Warrior\n")
+  var character = Player(name, 0, 0, 0, 0, 0, 0)
   var selectClass = true
   while (selectClass) {
     var charClass = readLine()
-    if (charClass.equals("1")) { 
-      character = Rogue(name)
-      selectClass = false
-    }
-    else if (charClass.equals("2")) { 
-      character = Wizard(name) 
-      selectClass = false
-    }
-    else if (charClass.equals("3")) { 
-      character = Warrior(name) 
-      selectClass = false
-    }
+    // CITE: https://www.geeksforgeeks.org/scala-list-contains-method-with-example/
+    // DESC: contains function and other string functionalities
+    if (charClass.length == 1 && "123".contains(charClass)) { selectClass = false }
+    if (charClass.equals("1")) { character = Rogue(name) }
+    else if (charClass.equals("2")) { character = Wizard(name) }
+    else if (charClass.equals("3")) { character = Warrior(name) }
     else { println("That's not an option, kid. Try again.") }
   }
   character
 }
 
-class Player(name: String, var charClass: String, var health: Int, var armor: Int, var damage: Int, var level: Int, var experiance: Int, var coins: Int):
+/**
+ * The player class that tracks the stats of the character
+ * @param name, the player's name
+ * @param health, the current health -- an integer
+ * @param armor, the armor -- an integer
+ * @param damage, the damage dealt by player -- an integer
+ * @param level, the player's current level -- an integer
+ * @param experience, the player's current xp -- an integer
+ * @param coins, the money the player has access to -- an integer
+ * */
+class Player(name: String, var health: Int, var armor: Int, var damage: Int, var level: Int, var experiance: Int, var coins: Int):
   var max_health = health
   var max_armor = armor
   var all_potions = 0
 
+  // A getter method for the player name
   def getName: String = name
-  def getClass: String = charClass
+  // A getter method for the player class
+  def getClass: String = "Default Class"
+  // A getter method for the player's current health
   def getHealth: Int = health
+  // A setter method for the player's current health
   def setHealth(_health: Int): Unit =
     health = _health
+  // A getter method for the player's maximum health
   def getMaxHealth: Int = max_health
+  // A setter method for the player's maximum health
   def setMaxHealth(_newHealth: Int): Unit =
     max_health = _newHealth 
+  // A getter method for the player's maximum armor
   def getMaxArmor: Int = max_armor
+  // A setter method for the player's maximum armor
   def setMaxArmor(_newArmor: Int): Unit =
     max_armor = _newArmor
+  // A getter method for the player's current armor
   def getArmor: Int = armor
+  // A setter method for the player's current armor
   def setArmor(_armor: Int): Unit =
     armor = _armor
+  // A getter method for the player's potions
   def getPotions: Int = all_potions
+  // A setter method for the player's potions
   def setPotions(_potion: Int): Unit =
     all_potions = _potion
+  // A getter method for the player's damage
   def getDamage: Int = damage
   def takeDamage(lostHealth: Int): Unit =
     // Matt how do you want armor to factor into this?
@@ -123,51 +151,17 @@ end Player
 
 // CITE: https://www.geeksforgeeks.org/method-overriding-in-scala/
 // DESC: How to override a method in a subclass
-class Rogue(var name: String) extends Player(name, "Rogue", 100, 5, 25, 1, 0, 0):
-  override def attack: Unit = println("Rouge attacks!")
+class Rogue(var name: String) extends Player(name, 100, 5, 25, 1, 0, 0):
+  override def attack: Unit = println("Rogue attacks!")
+  override def getClass: String = "Rogue"
 end Rogue
 
-class Wizard(var name: String) extends Player(name, "Wizard", 100, 10, 50, 1, 0, 0):
+class Wizard(var name: String) extends Player(name, 100, 10, 50, 1, 0, 0):
   override def attack: Unit = println("Wizard attacks!")
+  override def getClass: String = "Wizard"
 end Wizard
 
-class Warrior(var name: String) extends Player(name, "Warrior", 150, 15, 100, 1, 0, 0):
+class Warrior(var name: String) extends Player(name, 150, 15, 100, 1, 0, 0):
   override def attack: Unit = println("Warrior attacks!")
+  override def getClass: String = "Warrior"
 end Warrior
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
