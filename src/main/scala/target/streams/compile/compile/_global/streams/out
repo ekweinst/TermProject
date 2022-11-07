@@ -1,0 +1,115 @@
+[0m[[0m[31merror[0m] [0m[0m/Users/matthewmaillet/scala/TermProject/t-proj/src/main/scala/Main.scala:24:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mdef classArrowMatch(arrow: Int) : Int = {[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matthewmaillet/scala/TermProject/t-proj/src/main/scala/Main.scala:50:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mdef menuStart(mType: Int) : Int = {[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matthewmaillet/scala/TermProject/t-proj/src/main/scala/Main.scala:75:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mdef classSelect(name: String) : Player = {[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matthewmaillet/scala/TermProject/t-proj/src/main/scala/Main.scala:95:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mdef clearscr() = {[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matthewmaillet/scala/TermProject/t-proj/src/main/scala/Main.scala:101:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mdef createChar: Player = {[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matthewmaillet/scala/TermProject/t-proj/src/main/scala/Main.scala:116:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mdef playGame(character: Player) = {[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matthewmaillet/scala/TermProject/t-proj/src/main/scala/monsters.scala:10:64: ';' expected but ':' found.[0m
+[0m[[0m[31merror[0m] [0m[0mclass Monster(var health: Int, var armor: Int, var damage: Int):[0m
+[0m[[0m[31merror[0m] [0m[0m                                                               ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matthewmaillet/scala/TermProject/t-proj/src/main/scala/monsters.scala:12:2: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m	def setHealth(_health: Int): Unit = [0m
+[0m[[0m[31merror[0m] [0m[0m	^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matthewmaillet/scala/TermProject/t-proj/src/main/scala/monsters.scala:14:2: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m	def getArmor: Int = armor[0m
+[0m[[0m[31merror[0m] [0m[0m	^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matthewmaillet/scala/TermProject/t-proj/src/main/scala/monsters.scala:15:2: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m	def setArmor(_armor: Int): Unit = [0m
+[0m[[0m[31merror[0m] [0m[0m	^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matthewmaillet/scala/TermProject/t-proj/src/main/scala/monsters.scala:17:2: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m	def getDamage: Int = damage[0m
+[0m[[0m[31merror[0m] [0m[0m	^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matthewmaillet/scala/TermProject/t-proj/src/main/scala/monsters.scala:18:2: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m	def takeDamage(enemyDamage: Int): Unit = [0m
+[0m[[0m[31merror[0m] [0m[0m	^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matthewmaillet/scala/TermProject/t-proj/src/main/scala/monsters.scala:20:3: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m		if ((health - lostHealth) <= 0) {[0m
+[0m[[0m[31merror[0m] [0m[0m		^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matthewmaillet/scala/TermProject/t-proj/src/main/scala/monsters.scala:25:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mend Monster[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matthewmaillet/scala/TermProject/t-proj/src/main/scala/monsters.scala:29:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mend Goblin[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matthewmaillet/scala/TermProject/t-proj/src/main/scala/monsters.scala:33:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mend Skeleton[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matthewmaillet/scala/TermProject/t-proj/src/main/scala/player.scala:10:100: ';' expected but ':' found.[0m
+[0m[[0m[31merror[0m] [0m[0mclass Player(name: String, var charClass: String, var health: Int, var armor: Int, var damage: Int):[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                                   ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matthewmaillet/scala/TermProject/t-proj/src/main/scala/player.scala:12:2: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m	def getClass: String = charClass[0m
+[0m[[0m[31merror[0m] [0m[0m	^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matthewmaillet/scala/TermProject/t-proj/src/main/scala/player.scala:13:2: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m	def getHealth: Int = health[0m
+[0m[[0m[31merror[0m] [0m[0m	^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matthewmaillet/scala/TermProject/t-proj/src/main/scala/player.scala:14:2: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m	def setHealth(_health: Int): Unit = [0m
+[0m[[0m[31merror[0m] [0m[0m	^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matthewmaillet/scala/TermProject/t-proj/src/main/scala/player.scala:16:2: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m	def getArmor: Int = armor[0m
+[0m[[0m[31merror[0m] [0m[0m	^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matthewmaillet/scala/TermProject/t-proj/src/main/scala/player.scala:17:2: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m	def setArmor(_armor: Int): Unit = [0m
+[0m[[0m[31merror[0m] [0m[0m	^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matthewmaillet/scala/TermProject/t-proj/src/main/scala/player.scala:19:2: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m	def takeDamage(enemyDamage: Int): Unit = [0m
+[0m[[0m[31merror[0m] [0m[0m	^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matthewmaillet/scala/TermProject/t-proj/src/main/scala/player.scala:21:3: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m		if ((health - lostHealth) <= 0) {[0m
+[0m[[0m[31merror[0m] [0m[0m		^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matthewmaillet/scala/TermProject/t-proj/src/main/scala/player.scala:26:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mend Player[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matthewmaillet/scala/TermProject/t-proj/src/main/scala/player.scala:30:72: ';' expected but ':' found.[0m
+[0m[[0m[31merror[0m] [0m[0mclass Rogue(var name: String) extends Player(name, "Rogue", 80, 15, 60):[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matthewmaillet/scala/TermProject/t-proj/src/main/scala/player.scala:34:75: ';' expected but ':' found.[0m
+[0m[[0m[31merror[0m] [0m[0mclass Wizard(var name: String) extends Player(name, "Wizard", 100, 5, 100):[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                          ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matthewmaillet/scala/TermProject/t-proj/src/main/scala/player.scala:38:77: ';' expected but ':' found.[0m
+[0m[[0m[31merror[0m] [0m[0mclass Warrior(var name: String) extends Player(name, "Warrior", 150, 10, 50):[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matthewmaillet/scala/TermProject/t-proj/src/main/scala/wild.scala:31:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mdef explore(character: Player) =[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matthewmaillet/scala/TermProject/t-proj/src/main/scala/wild.scala:33:5: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m    var randMonster = Random.nextInt(100)[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matthewmaillet/scala/TermProject/t-proj/src/main/scala/wild.scala:34:5: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m    if (walkChance <= 5) {[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matthewmaillet/scala/TermProject/t-proj/src/main/scala/wild.scala:56:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mdef wildArrowMatch(arrow: Int) : Int =[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matthewmaillet/scala/TermProject/t-proj/src/main/scala/wild.scala:58:5: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m    arrow match {[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matthewmaillet/scala/TermProject/t-proj/src/main/scala/wild.scala:76:5: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m    nextArrow[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matthewmaillet/scala/TermProject/t-proj/src/main/scala/wild.scala:79:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mdef wild() =[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matthewmaillet/scala/TermProject/t-proj/src/main/scala/wild.scala:81:5: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m    println("Would you like to explore or go back to town?\n> Explore\n  Go back")[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matthewmaillet/scala/TermProject/t-proj/src/main/scala/wild.scala:82:5: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m    var choice = menuStart(1)[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matthewmaillet/scala/TermProject/t-proj/src/main/scala/wild.scala:83:5: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m    if (choice == 0) {[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m38 errors found[0m
